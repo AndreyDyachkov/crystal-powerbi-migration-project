@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "school_analytics_sp"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e8ccac59-66e7-4a21-9549-2f37f8dc7ddc"
+  }
+}

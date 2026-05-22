@@ -1,0 +1,164 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "ac240899f2fd5be93ebd",
+  "position": {
+    "x": 27.112361409895747,
+    "y": 21.087392207696691,
+    "z": 1,
+    "height": 138.57429165057826,
+    "width": 1226.0812326475077
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "AvgScore"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(usp_GetSchoolAnalytics.AvgScore)",
+              "nativeQueryRef": "Average of AvgScore"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "AttendancePct"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(usp_GetSchoolAnalytics.AttendancePct)",
+              "nativeQueryRef": "Average of AttendancePct"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "SchoolRank"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(usp_GetSchoolAnalytics.SchoolRank)",
+              "nativeQueryRef": "Average of SchoolRank"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "usp_GetSchoolAnalytics"
+                      }
+                    },
+                    "Property": "AvgScore"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8c3e3a55b72800b056df",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "AvgScore"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "24da98233fbc99d4d048",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "AttendancePct"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "90ab3cab4500a03b0449",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "SchoolRank"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

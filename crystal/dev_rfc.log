@@ -1,0 +1,21 @@
+
+**** Log file opened at 2026-05-21 00:27:23.152827 UTC-12:00 (New Zealand Summer Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 14
+Compilation date          : Jun 15 2024 06:07:33
+CPIC library              : 754.2024.02.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 325
+Current working directory : C:\Users\Andrew\Documents\GitHub\crystal-powerbi-migration-project\crystal
+Program                   : crw64
+Process ID                : 19996
+User                      : Andrew
+Hardware                  : PC with Windows NT 12x AMD64 Level 23 (Mod 104 Step 1)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : DESKTOP-EOEL5L3
+IP address                : 192.168.88.3
+IPv6 address              : fe80::9617:dc6:7178:90a
+Global trace level        : 0
+
+2026-05-21 00:27:23.156617 [24312] >> Info entry
+	Did not find config file C:\Users\Andrew\Documents\GitHub\crystal-powerbi-migration-project\crystal\sapnwrfc.ini.

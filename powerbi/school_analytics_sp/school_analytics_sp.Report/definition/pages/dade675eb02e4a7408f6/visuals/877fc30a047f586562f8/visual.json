@@ -1,0 +1,345 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "877fc30a047f586562f8",
+  "position": {
+    "x": 27.112361409895747,
+    "y": 176.23034916432238,
+    "z": 0,
+    "height": 531.70353209406665,
+    "width": 1226.0812326475077,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "usp_GetSchoolAnalytics"
+                    }
+                  },
+                  "Property": "school_name"
+                }
+              },
+              "queryRef": "usp_GetSchoolAnalytics.school_name",
+              "nativeQueryRef": "school_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "usp_GetSchoolAnalytics"
+                    }
+                  },
+                  "Property": "student_name"
+                }
+              },
+              "queryRef": "usp_GetSchoolAnalytics.student_name",
+              "nativeQueryRef": "student_name",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "ResultStatus"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(usp_GetSchoolAnalytics.ResultStatus)",
+              "nativeQueryRef": "ResultStatus"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "AvgScore"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(usp_GetSchoolAnalytics.AvgScore)",
+              "nativeQueryRef": "Average of AvgScore"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "AttendancePct"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(usp_GetSchoolAnalytics.AttendancePct)",
+              "nativeQueryRef": "Average of AttendancePct"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "usp_GetSchoolAnalytics"
+                        }
+                      },
+                      "Property": "SchoolRank"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(usp_GetSchoolAnalytics.SchoolRank)",
+              "nativeQueryRef": "Average of SchoolRank"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "usp_GetSchoolAnalytics"
+                      }
+                    },
+                    "Property": "AttendancePct"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "usp_GetSchoolAnalytics.school_name"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "usp_GetSchoolAnalytics"
+                    }
+                  },
+                  "Property": "school_name"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "usp_GetSchoolAnalytics.student_name"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "usp_GetSchoolAnalytics"
+                    }
+                  },
+                  "Property": "student_name"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Hutt Valley High'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Wellington College'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Wellington Girls'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4b18bcb45b7c449d438a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "usp_GetSchoolAnalytics"
+              }
+            },
+            "Property": "student_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b56bc771f3543bd434f1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "AvgScore"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "661284f855e5413afcf5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "AttendancePct"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9b91d8043afdab4627ea",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "SchoolRank"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "65f4e42f7e5a703cc39a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "usp_GetSchoolAnalytics"
+              }
+            },
+            "Property": "school_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "725bba480cb618f9fc40",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "usp_GetSchoolAnalytics"
+                  }
+                },
+                "Property": "ResultStatus"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

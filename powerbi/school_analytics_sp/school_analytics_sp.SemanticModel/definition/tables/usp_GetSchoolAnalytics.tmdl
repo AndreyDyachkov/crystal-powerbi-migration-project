@@ -1,0 +1,95 @@
+table usp_GetSchoolAnalytics
+	lineageTag: a3b4507e-21f2-45d0-90dc-0c80a06c5f48
+
+	column student_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 56024973-af46-426d-b73b-04698927e307
+		summarizeBy: sum
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_name
+		dataType: string
+		lineageTag: d95ca40d-fe12-44f3-932f-ced59e36c320
+		summarizeBy: none
+		sourceColumn: student_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column school_name
+		dataType: string
+		lineageTag: 0e4e21da-7857-4ca8-8ff2-4edd3fc8a1f0
+		summarizeBy: none
+		sourceColumn: school_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_level
+		dataType: int64
+		formatString: 0
+		lineageTag: f759a589-1bdf-42ed-a2ad-28da80ebb3d7
+		summarizeBy: sum
+		sourceColumn: year_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalCredits
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c69250e-38a1-4126-9783-25bcf64a5ed1
+		summarizeBy: sum
+		sourceColumn: TotalCredits
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvgScore
+		dataType: double
+		lineageTag: b379f2f0-6467-4141-97ea-74b67a1ee019
+		summarizeBy: sum
+		sourceColumn: AvgScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AttendancePct
+		dataType: double
+		lineageTag: 50f4e665-478d-4c25-9e8c-0bbf044e1384
+		summarizeBy: sum
+		sourceColumn: AttendancePct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ResultStatus
+		dataType: string
+		lineageTag: f92374fe-35ff-4c93-aa8d-c893be86fa54
+		summarizeBy: none
+		sourceColumn: ResultStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolRank
+		dataType: int64
+		formatString: 0
+		lineageTag: ac1f401c-aed2-41a1-ae18-4db64b28fd45
+		summarizeBy: sum
+		sourceColumn: SchoolRank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition usp_GetSchoolAnalytics = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "NZQA_Training", [Query="EXEC dbo.usp_GetSchoolAnalytics#(lf)    @ExamYear = 2025"])
+				in
+				    Source
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

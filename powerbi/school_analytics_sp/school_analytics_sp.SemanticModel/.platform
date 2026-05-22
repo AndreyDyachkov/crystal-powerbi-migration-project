@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "school_analytics_sp"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6ac93d7d-9235-418e-a5c8-14e557a64c44"
+  }
+}
