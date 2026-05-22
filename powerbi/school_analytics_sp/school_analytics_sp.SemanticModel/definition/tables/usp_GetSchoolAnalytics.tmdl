@@ -89,7 +89,5 @@ table usp_GetSchoolAnalytics
 				in
 				    Source
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 
